@@ -1,0 +1,44 @@
+
+How do you design an application with JMS messaging?
+
+
+Connection
+Provides access to the underlying transport, and is used to create Sessions.
+Session
+Provides a context for producing and consuming messages, including the methods used to create MessageProducers and MessageConsumers.
+MessageProducer
+Used to send messages.
+MessageConsumer
+Used to receive messages.
+How do you handle exception in JMS consumers and how to you recover?
+The root class for exceptions thrown by JMS API methods is JMSException. 
+Catching JMSException provides a generic way of handling all exceptions related to the JMS API.
+How do you implement LRU or MRU cache?
+Least Recently Used (LRU): This cache algorithm keeps recently used items near the top of cache. 
+Whenever a new item is accessed, the LRU places it at the top of the cache. 
+When the cache limit has been reached, items that have been accessed
+ less recently will be removed starting from the bottom of the cache. 
+This can be an expensive algorithm to use, as it needs to keep "age bits" that show exactly when the item was accessed.
+ In addition, when a LRU cache algorithm deletes an item, the "age bit" changes on all the other items.
+
+Most Recently Used (MRU): This cache algorithm removes the most recently used items first. A MRU algorithm is good in situations 
+in which the older an item is, the more likely it is to be accessed.
+How would you implement Executor Service?
+ThreadPoolExecutor provides an extension point for afterExecution where you can put the job back at the end of the queue.
+
+Describe singleton design pattern – how would you implement?
+Ensure a class has only one instance, and provide a global point of access to it.
+Encapsulated "just-in-time initialization" or "initialization on first use".
+
+
+Describe properties of Java String.
+Immutable Java String
+
+Java String is a immutable object. For an immutable object you cannot modify any of its attribute’s values. Once you have created a java
+ String object it cannot be modified to some other object or a different String. 
+References to a java String instance is mutable.
+
+Java String Instantiation
+
+In continuation with above discussion of immutability of java String 
+we shall see how that property is used for instantiating a Sting instance. JVM maintains a memory pool for String.
